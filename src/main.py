@@ -94,6 +94,8 @@ class Ship(WidgetDrawer):
         #don't let the ship go too far
         if self.y >  Window.height*0.95: #don't let the ship go up too high
             self.impulse = -3
+        elif self.y < Window.height*0.05:
+            self.impulse = 9
  
     def determineVelocity(self):
         #move the ship up and down
@@ -128,7 +130,7 @@ class GUI(Widget):
     minProb = 1700 #this variable used in spawning asteroids
     def __init__(self, **kwargs):
         super(GUI, self).__init__(**kwargs)
-        l = Label(text='Flappy Ship') #give the game a title
+        l = Label(text='Ship Test build %%NULL%%') #give the game a title
         l.x = Window.width/2 - l.width/2
         l.y = Window.height*0.8
         self.add_widget(l) #add the label to the screen
